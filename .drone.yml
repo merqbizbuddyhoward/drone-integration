@@ -1,0 +1,20 @@
+pipeline:
+  notify:
+    image: plugins/slack
+    channel: developers
+    username: drone
+publish:
+  s3:
+    acl: public-read
+    region: "us-west-2"
+    bucket: "dev2.merqbiz.com"
+    access_key: "$$AWS_ACCESS_KEY_ID"
+    secret_key: "$$AWS_SECRET_ACCESS_KEY"
+    source: public
+    target: /
+    recursive: true
+notify:
+  slack:
+    webhook: https://hooks.slack.com/services/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
+    username: merqbizbuddyhoward
+    channel: sandbox_tran
