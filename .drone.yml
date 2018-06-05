@@ -1,8 +1,9 @@
 pipeline:
   notify:
     image: plugins/slack
-    channel: developers
-    username: drone
+    webhook: https://hooks.slack.com/services/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
+    username: merqbizbuddyhoward
+    channel: sandbox_tran
 publish:
   s3:
     acl: public-read
@@ -13,8 +14,3 @@ publish:
     source: public
     target: /
     recursive: true
-notify:
-  slack:
-    webhook: https://hooks.slack.com/services/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
-    username: merqbizbuddyhoward
-    channel: sandbox_tran
