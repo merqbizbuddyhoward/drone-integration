@@ -1,4 +1,7 @@
 pipeline:
+  publish:
+    ecr:
+      
   frontend:
     image: node:8.11.2-alpine
     commands: 
