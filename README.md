@@ -1,5 +1,8 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# Drone Integration
+
+## Deploy
+
+![alt text](https://buddyhoward.localtunnel.me/api/badges/merqbizbuddyhoward/drone-integration/status.svg)
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
 
@@ -20,7 +23,3 @@ Then you can run it by:
 cd gatsby-example-site
 gatsby develop
 ```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
