@@ -1,13 +1,12 @@
 pipeline:
-  build:
-    frontend:
-      image: node:8.11.2-alpine
-      commands: 
-        - npm install
-        - npm run test
-        - npm run build
-      when:
-        branch: master
+  frontend:
+    image: node:8.11.2-alpine
+    commands: 
+      - npm install
+      - npm run test
+      - npm run build
+    when:
+      branch: master
   notify:
     image: plugins/slack
     webhook: https://hooks.slack.com/services/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
