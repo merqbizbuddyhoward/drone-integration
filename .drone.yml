@@ -28,5 +28,3 @@ pipeline:
         ".js": gzip
         ".css": gzip
       cloudfront_distribution: E1CH3B6EW4M6KZ
-
-branches: [ master, develop ]
