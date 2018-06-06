@@ -1,16 +1,32 @@
 pipeline:
+  build:
+    frontend:
+    image: node:8.11.2-alpine
+    commands: 
+      - npm install
+      - npm run test
+      - npm run build
+    when:
+      branch: master
   notify:
     image: plugins/slack
     webhook: https://hooks.slack.com/services/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
     username: merqbizbuddyhoward
     channel: sandbox_tran
-publish:
-  s3:
-    acl: public-read
-    region: "us-west-2"
-    bucket: "dev2.merqbiz.com"
-    access_key: "$$AWS_ACCESS_KEY_ID"
-    secret_key: "$$AWS_SECRET_ACCESS_KEY"
-    source: public
-    target: /
-    recursive: true
+  publish:
+    s3-sync:
+      image: plugins/s3-sync:1
+      region: us-west-2
+      bucket: dev.merqbiz.com
+      access_key: "$$AWS_ACCESS_KEY_ID"
+      secret_key: "$$AWS_SECRET_ACCESS_KEY"
+      source: public
+      target: /
+      acl:
+        "*": public-read
+      content_encoding:
+        ".js": gzip
+        ".css": gzip
+      cloudfront_distribution: E1CH3B6EW4M6KZ
+
+branches: [ master, develop ]
