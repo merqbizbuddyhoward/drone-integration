@@ -13,7 +13,7 @@ services:
     environment:
       - DRONE_OPEN=true
       - DRONE_ADMIN=merqbizbuddyhoward
-      - DRONE_HOST=https://mybuddyhoward.localtunnel.me
+      - DRONE_HOST=https://buddyhoward.localtunnel.me
       - DRONE_GITHUB=true
       - DRONE_GITHUB_CLIENT=327429241f83633408a9
       - DRONE_GITHUB_SECRET=e9e3decb1ef93b1cd05b74037b4f4fc9281ae409
