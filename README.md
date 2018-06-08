@@ -2,7 +2,7 @@
 
 ## Deploy
 
-![alt text](https://buddyhoward.localtunnel.me/api/badges/merqbizbuddyhoward/drone-integration/status.svg)
+![alt text](https://merqbiz.ngrok.io/api/badges/merqbizbuddyhoward/drone-integration/status.svg)
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
 
