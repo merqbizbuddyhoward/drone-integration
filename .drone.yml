@@ -25,3 +25,5 @@ pipeline:
     username: merqbizbuddyhoward
     channel: sandbox_tran
     secrets: [ slack_webhook ]
+    when:
+      status: [ success, failure ]
