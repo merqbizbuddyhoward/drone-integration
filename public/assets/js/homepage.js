@@ -1,0 +1,5 @@
+const HomepageFunction = () => {
+
+}
+
+export {HomepageFunction};

@@ -1,0 +1,28 @@
+@import '../../styles/settings';
+
+.CategoryTile {
+  $CategoryTile--Padding: $mUnit !default;
+  $CategoryTile--MaxWidth: 250px !default;
+  $CategoryTile--Height: 250px !default;
+  $CategoryTile--Border: 0px solid #000 !default;
+  $CategoryTile--BoxShadow: $boxShadow !default;
+  $CategoryTile__title--FontSize: $lFontSize !default;
+  $CategoryTile__title--Color: $textColor !default;
+
+  text-align: center;
+  width: 100%;
+  max-height: $CategoryTile--Height;
+  max-width: $CategoryTile--MaxWidth;
+  padding: $CategoryTile--Padding;
+  border: $CategoryTile--Border;
+  box-shadow: $CategoryTile--BoxShadow;
+  &__title {
+    font-size: $CategoryTile__title--FontSize;
+    color: $CategoryTile__title--Color;
+  }
+  &__image {
+    width: 65px;
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -2,40 +2,34 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
-import './index.css'
-
-const Layout = ({ children, data }) => (
-  <div>
+const IndexLayout = ({ children, data }) => (
+  <div className="IndexLayout">
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
         { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'keywords', content: 'sample, something' }
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
+    <header className="IndexLayout__header">
+      <img src="/assets/images/logo.svg" alt="merQbiz" />
+      {/* Components for header */}
+    </header>
+    <main className="IndexLayout__main">{children()}</main>
+    <footer className="IndexLayout__footer">
+      {/* Components for footer */}
+    </footer>
   </div>
 )
 
-Layout.propTypes = {
-  children: PropTypes.func,
+IndexLayout.propTypes = {
+  children: PropTypes.func
 }
 
-export default Layout
+export default IndexLayout
 
 export const query = graphql`
-  query SiteTitleQuery {
+  query IndexLayoutQuery {
     site {
       siteMetadata {
         title

@@ -1,7 +1,12 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.onCreatePage = async ({ page, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+  const USER_PAGE_REGEX = /^\/(login|join|forgot-password)/
+  return new Promise((resolve, reject) => {
+    if (page.path.match(USER_PAGE_REGEX)) {
+      page.layout = 'single'
+      createPage(page)
+    }
 
- // You can delete this file if you're not using it
+    resolve()
+  })
+}

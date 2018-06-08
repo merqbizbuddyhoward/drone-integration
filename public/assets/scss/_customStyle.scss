@@ -1,0 +1,11 @@
+.display-none-phone {
+    @include breakpoint(phone) {
+        display: none;
+    }
+}
+
+.display-none-tablet {
+    @include breakpoint(tablet) {
+        display: none;
+    }
+}

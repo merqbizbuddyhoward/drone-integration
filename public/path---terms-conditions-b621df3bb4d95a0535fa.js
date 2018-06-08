@@ -1,0 +1,2 @@
+webpackJsonp([0xc4f9bde60072],{332:function(n,t){n.exports={data:{markdownRemark:{html:'<div class="container">\n    <div class="col-md-10 col-md-offset-1">\n        <h1>Terms and Conditions Page.</h1>\n    </div>\n    <div class="content col-md-6 col-md-offset-2">\n        <h2>Content will be added later.</h2>\n    </div>\n</div>',frontmatter:{path:"/terms-conditions",title:"Terms and Conditions Page"}}},pathContext:{}}}});
+//# sourceMappingURL=path---terms-conditions-b621df3bb4d95a0535fa.js.map

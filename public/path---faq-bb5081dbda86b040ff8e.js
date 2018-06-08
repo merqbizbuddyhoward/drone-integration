@@ -1,0 +1,2 @@
+webpackJsonp([84887730282209],{329:function(t,n){t.exports={data:{markdownRemark:{html:'<div class="container">\n    <div class="col-xs-10 col-xs-offset-1">\n        <h1>This is FAQs Page</h1>\n    </div>\n    <div class="content col-md-6 col-xs-8 col-xs-offset-2">\n        <p>Content will be added later.</p>\n    </div>\n</div>',frontmatter:{path:"/faq",title:"FAQs Page"}}},pathContext:{}}}});
+//# sourceMappingURL=path---faq-bb5081dbda86b040ff8e.js.map
