@@ -11,7 +11,7 @@ services:
       - ./drone:/var/lib/drone/
     restart: always
     environment:
-      - DRONE_OPEN=true
+      - DRONE_OPEN=false
       - DRONE_ADMIN=merqbizbuddyhoward
       - DRONE_HOST=https://merqbiz.ngrok.io
       - DRONE_GITHUB=true

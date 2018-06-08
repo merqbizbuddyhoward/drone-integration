@@ -9,9 +9,9 @@ pipeline:
       branch: master
   notify:
     image: plugins/slack
-    webhook: https://hooks.slack.com/services/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
     username: merqbizbuddyhoward
     channel: sandbox_tran
+    secrets: [ slack_webhook ]
   s3-sync:
     image: plugins/s3-sync:1
     region: us-west-2
