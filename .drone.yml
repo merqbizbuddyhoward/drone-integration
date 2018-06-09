@@ -1,10 +1,17 @@
 pipeline:
+  notify:
+    image: plugins/slack
+    username: merqbizbuddyhoward
+    channel: sandbox_tran
+    secrets: [ slack_webhook ]
+    when:
+      status: [ success, failure ]
+    template: >
+       A build for {{repo.name}} {{build.number}} for {{build.branch}} has started.
   frontend:
     image: node:8.11.2-alpine
     commands: 
       - npm install
-      - npm run test
-      - npm run build
     when:
       branch: master
   s3-sync:
@@ -27,3 +34,9 @@ pipeline:
     secrets: [ slack_webhook ]
     when:
       status: [ success, failure ]
+    template: >
+     {{#success build.status}}
+       A build for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job.
+     {{else}}
+       A build for {{repo.name}} {{build.number}} failed. Fix me please.
+     {{/success}}
