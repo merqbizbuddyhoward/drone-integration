@@ -7,7 +7,7 @@ pipeline:
     when:
       status: [ success, failure ]
     template: >
-       A build for {{repo.name}} {{build.number}} for {{build.branch}} has started.
+       A build for {{repo.name}} {{build.number}} for {{build.branch}} has initiated.
   frontend:
     image: node:8.11.2-alpine
     commands: 
