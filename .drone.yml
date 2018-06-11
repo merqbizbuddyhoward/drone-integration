@@ -1,4 +1,4 @@
-build:
+pipeline:
   notify:
     image: plugins/slack
     username: merqbizbuddyhoward
@@ -14,6 +14,19 @@ build:
       - npm install
     when:
       branch: master
+  s3-sync:
+    image: plugins/s3-sync:1
+    region: us-west-2
+    bucket: dev.merqbiz.com
+    source: public
+    target: /
+    acl:
+      "*": public-read
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
+    cloudfront_distribution: E1CH3B6EW4M6KZ
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
   notify:
     image: plugins/slack
     username: merqbizbuddyhoward
@@ -27,19 +40,3 @@ build:
      {{else}}
        A build for {{repo.name}} {{build.number}} failed. Fix me please.
      {{/success}}
-deploy:
-  dev:
-    image: plugins/s3-sync:1
-    region: us-west-2
-    bucket: dev.merqbiz.com
-    source: public
-    target: /
-    acl:
-      "*": public-read
-    content_encoding:
-      ".js": gzip
-      ".css": gzip
-    cloudfront_distribution: E1CH3B6EW4M6KZ
-    secrets: [ aws_access_key_id, aws_secret_access_key ]
-    when:
-      branch: develop
