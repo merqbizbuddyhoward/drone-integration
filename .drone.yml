@@ -12,6 +12,7 @@ pipeline:
     image: node:8.11.2-alpine
     commands: 
       - npm install
+      - npm run test
     when:
       branch: master
   s3-sync:
