@@ -1,0 +1,25 @@
+{
+  "categories": [
+    {
+      "name": "General Information",
+      "entries": [
+        {
+          "question": "Who can join merQbiz",
+          "answer": "Lorem ipsum answer text"
+        },
+        {
+          "question": "Is my information secure on merQbiz?",
+          "answer": "Lorem ipsum answer text"
+        },
+        {
+          "question": "Can I join as a buyer and a seller?",
+          "answer": "Lorem ipsum answer text"
+        },
+        {
+          "question": "How does merQbiz make money?",
+          "answer": "Lorem ipsum answer text"
+        }
+      ]
+    }
+  ]
+}

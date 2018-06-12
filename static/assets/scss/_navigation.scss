@@ -1,0 +1,132 @@
+.topnav-section {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .navbar-custom {
+        padding: 0;
+
+        .navbar-brand,
+        .navbar-text {
+            color: #fff;
+        }
+
+        .navbar-brand {
+            @include breakpoint(tablet) {
+                padding: 40px;
+            }
+
+
+            @include breakpoint(phone) {
+                padding: 20px;
+            }
+        }
+
+        .top-links {
+            color: #fff;
+            position: absolute;
+
+            @include breakpoint(tablet) {
+                right: 120px;
+            }
+
+
+            @include breakpoint(phone) {
+                right: 0;
+            }
+
+
+            a {
+                padding: 0.8rem;
+
+                &.with-border {
+                    border: 1px solid $white;
+                }
+            }
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+
+            div {
+                padding: 0 60px;
+            }
+
+            .supportLinks {
+                color: $font-light;
+                font-size: 0.8rem;
+
+                p {
+                    margin-bottom: 0.3rem;
+                }
+            }
+
+            .pageLinks {
+                font-size: 1rem;
+
+                li {
+                    margin-bottom: 0.8rem;
+                }
+            }
+        }
+
+        .navbar-toggler {
+            z-index: 10;
+            padding-right: 60px;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.open-true {
+                .navbar-toggler-icon {
+                    background-image: url("../images/icons/close.svg");
+                }
+            }
+
+            &.open-false {
+                .navbar-toggler-icon {
+                    background-image: url("../images/icons/hamburger.svg");
+                }
+            }
+        }
+
+        .navbar-collapse {
+            background-color: $white;
+            max-width: none;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            .logo-image {
+                padding: 30px 60px;
+            }
+        }
+    }
+
+    .logo-section {
+        display: flex;
+
+        .merq-logo-image {
+            padding: 0.5rem 1rem;
+            border-right: 1px solid $gray-b;
+            align-self: center;
+        }
+
+        .voith-powered-by {
+            padding-left: 1rem;
+            align-self: center;
+            font-size: 0.7rem;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            .voith-logo {
+                width: 36px;
+            }
+        }
+    }
+}
