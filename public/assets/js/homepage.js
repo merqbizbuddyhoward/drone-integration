@@ -1,5 +1,0 @@
-const HomepageFunction = () => {
-
-}
-
-export {HomepageFunction};
