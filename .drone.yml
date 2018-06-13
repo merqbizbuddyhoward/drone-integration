@@ -9,7 +9,7 @@ pipeline:
     template: >
        A build for {{repo.name}} {{build.number}} for {{build.branch}} has started.
   frontend:
-    image: node:8.11.2-alpine
+    image: backstopjs:backstopjs
     commands: 
       - npm install
       - npm run test
