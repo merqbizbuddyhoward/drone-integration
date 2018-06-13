@@ -13,6 +13,7 @@ pipeline:
     commands: 
       - npm install
       - npm run test
+    mem_limit: 2000MB 
     when:
       branch: master
   s3-sync:
