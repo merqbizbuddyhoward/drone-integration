@@ -8,10 +8,17 @@ pipeline:
       status: [ success, failure ]
     template: >
        A build for {{repo.name}} {{build.number}} for {{build.branch}} has started.
+  setup:
+    image: docker
+    commands:
+      - docker build -t nodejs .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   frontend:
     image: backstopjs/backstopjs
     commands: 
       - npm install
+      - npm run dev
       - npm run test
     mem_limit: 2000MB 
     when:

@@ -11,8 +11,6 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
       name: `collection`,
       value: name
     })
-
-    console.log(node)
   }
 }
 

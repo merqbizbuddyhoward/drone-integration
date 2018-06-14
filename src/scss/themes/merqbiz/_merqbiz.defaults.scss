@@ -24,31 +24,3 @@ $text-strong-font-weight: 600;
 $button-accent-color: #ff8d6d;
 $control-brand-color: #049371;
 $border-radius: 0px;
-
-@font-face {
-  font-family: 'GothamRounded';
-  src: url('/assets/fonts/Gotham-Rounded-Book.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'GothamRounded';
-  src: url('/assets/fonts/Gotham-Rounded-Medium.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'GothamRounded';
-  src: url('/assets/fonts/Gotham-Rounded-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'GothamRounded';
-  src: url('/assets/fonts/Gotham-Rounded-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-}

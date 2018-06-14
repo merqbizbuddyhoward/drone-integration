@@ -1,0 +1,11 @@
+.Nav {
+  display: flex;
+  &_link {
+    padding: 0.8rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  &_link.is-button {
+    border: 1px solid #fff;
+  }
+}

@@ -1,0 +1,15 @@
+@import 'base';
+
+.IndexLayout {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+
+  header {
+  }
+  main {
+    flex: 1;
+  }
+  footer {
+  }
+}
