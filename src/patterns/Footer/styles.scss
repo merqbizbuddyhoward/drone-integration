@@ -1,13 +1,16 @@
 .Footer {
   color: #8a8a8a;
   font-size: 0.8rem;
+
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
+
   &__content__item {
   }
+
   &_link {
     display: block;
     padding: 0.8rem 0;
@@ -15,11 +18,13 @@
     font-size: 1rem;
     line-height: 1;
   }
+
   &_subheading {
     color: #4b78f5;
     font-size: 16px;
     font-weight: 600;
   }
+
   &_input {
     height: 45px;
     min-width: 200px;
@@ -28,6 +33,7 @@
     font-size: 0.8rem;
     border: 1px solid #ddd;
   }
+
   &_button {
     font-size: 0.7rem;
     height: 45px;
@@ -37,6 +43,7 @@
     background-color: #4971ec;
     color: #fff;
   }
+
   &_support-text {
     margin: 0;
     padding: 0.8rem;

@@ -1,11 +1,10 @@
-const path = require('path')
-
 exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNode, createNodeField } = boundActionCreators
+  const { createNodeField } = boundActionCreators
   if (node.internal.owner === 'gatsby-transformer-json') {
-    let type = node.internal.type
-    let name = type.substring(0, type.length - 4)
+    const { type } = node.internal
+    const name = type.substring(0, type.length - 4)
     node.collection = name
+
     createNodeField({
       node,
       name: `collection`,
@@ -18,7 +17,7 @@ exports.onCreatePage = async ({ page, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   const USER_PAGE_REGEX = /^\/(login|join|forgot-password|thank-you|update-password)/
   const INFORMATION_PAGE_REGEX = /^\/(faq)/
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     if (page.path.match(USER_PAGE_REGEX)) {
       page.layout = 'single'
       createPage(page)

@@ -18,6 +18,7 @@ pipeline:
     image: backstopjs/backstopjs
     commands: 
       - npm install
+      - npm run lint
       - npm run dev
       - npm run test
     mem_limit: 2000MB 

@@ -10,14 +10,18 @@
   padding: 24px;
   box-sizing: border-box;
   background-color: $brand-color;
+
   * {
     box-sizing: border-box;
   }
+
   &__header {
   }
+
   &__main {
     flex: 1;
   }
+
   &_logo {
     display: block;
     width: 127px;
@@ -36,12 +40,15 @@
   * {
     box-sizing: border-box;
   }
+
   &__header {
     background-color: #333;
   }
+
   &__main {
     flex: 1;
   }
+
   &_logo {
     width: 127px;
     height: auto;

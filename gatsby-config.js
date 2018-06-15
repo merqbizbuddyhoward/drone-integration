@@ -14,7 +14,7 @@ module.exports = {
     {
       resolve: 'custom-sass-loader',
       options: {
-        postCssPlugins: []
+        postCssPlugins: [autoprefixer()]
       }
     },
     {

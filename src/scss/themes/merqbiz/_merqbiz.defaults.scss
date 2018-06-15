@@ -9,13 +9,13 @@ $brand-status-colors: (
   error: #f04953,
   warning: #ffd144,
   ok: $brand-color,
-  unknown: #cccccc,
-  disabled: #cccccc
+  unknown: #ccc,
+  disabled: #ccc
 );
 $brand-link-color: inherit;
 $link-hover-color: #000;
 $brand-link-text-decoration: underline;
-$brand-grey-colors: (#000001, #333333, #3b3b3b, #434343, #666666);
+$brand-grey-colors: (#000001, #333, #3b3b3b, #434343, #666);
 $brand-graph-colors: $brand-neutral-colors;
 
 $text-font-weight: 100;
@@ -23,4 +23,4 @@ $text-strong-font-weight: 600;
 
 $button-accent-color: #ff8d6d;
 $control-brand-color: #049371;
-$border-radius: 0px;
+$border-radius: 0;
