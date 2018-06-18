@@ -7,7 +7,7 @@ pipeline:
     when:
       status: [ success, failure ]
     template: >
-      Continuous integration started for branch {{build.branch}} committed for {{repo.name}} \#{{build.number}}.
+      Continuous integration started for branch {{build.branch}} committed for {{repo.name}} {{build.number}}.
   frontend:
     image: backstopjs/backstopjs
     commands: 
