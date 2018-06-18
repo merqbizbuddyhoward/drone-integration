@@ -17,7 +17,7 @@ pipeline:
     storage_driver: overlay
     tags:
       - latest
-      - 1.0.{{build.number}}-{{build.branch}}
+      - 1.0.${DRONE_BUILD_NUMBER}-${DRONE_REPO_BRANCH}
     secrets: [ ecr_access_key, ecr_secret_key ]
   frontend:
     image: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
