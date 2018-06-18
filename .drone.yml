@@ -8,8 +8,19 @@ pipeline:
       status: [ success, failure ]
     template: >
       Continuous integration started for <a href="{{DRONE_REPO}}">{{DRONE_REPO}}</a>{{build.branch}} committed for {{repo.name}} {{build.number}}.
+  ecr:
+    image: plugins/ecr
+    repo: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
+    registry: 784985187312.dkr.ecr.us-west-2.amazonaws.com
+    region: us-west-2
+    dockerfile: Dockerfile
+    storage_driver: overlay
+    tags:
+      - latest
+      - 1.0.{{build.number}}-{{build.branch}}
+    secrets: [ ecr_access_key, ecr_secret_key ]
   frontend:
-    image: backstopjs/backstopjs
+    image: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
     commands: 
       - npm install
       - npm run dev
