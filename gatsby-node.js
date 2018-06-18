@@ -16,14 +16,14 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
 exports.onCreatePage = async ({ page, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   const USER_PAGE_REGEX = /^\/(login|join|forgot-password|thank-you|update-password)/
-  const INFORMATION_PAGE_REGEX = /^\/(faq)/
+  const CONTENT_PAGE_REGEX = /^\/(faq|user-agreement|dispute-resolution-policy|privacy-policy)/
   return new Promise(resolve => {
     if (page.path.match(USER_PAGE_REGEX)) {
       page.layout = 'single'
       createPage(page)
     }
-    if (page.path.match(INFORMATION_PAGE_REGEX)) {
-      page.layout = 'information'
+    if (page.path.match(CONTENT_PAGE_REGEX)) {
+      page.layout = 'content'
       createPage(page)
     }
 

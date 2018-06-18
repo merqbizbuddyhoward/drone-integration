@@ -8,7 +8,7 @@ import Nav from '../components/Nav'
 import Footer from '../patterns/Footer'
 
 // Styles
-import '../scss/home.scss'
+import '../styles/home.scss'
 
 export default class IndexLayout extends React.Component {
   render() {

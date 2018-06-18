@@ -6,7 +6,7 @@ import Box from 'grommet/components/Box'
 
 import Logo from '../components/Logo'
 
-import '../scss/main.scss'
+import '../styles/main.scss'
 
 export default class SingleLayout extends React.Component {
   render() {
@@ -24,7 +24,14 @@ export default class SingleLayout extends React.Component {
         <div className="SingleLayout__header">
           <Logo />
         </div>
-        <Box className="SingleLayout__main" full colorIndex="light-1">
+        <Box
+          className="SingleLayout__main"
+          alignSelf="center"
+          colorIndex="light-1"
+          size="auto"
+          margin="small"
+          align="center"
+        >
           {this.props.children()}
         </Box>
       </App>

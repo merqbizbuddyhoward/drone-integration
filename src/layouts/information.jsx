@@ -6,7 +6,7 @@ import Box from 'grommet/components/Box'
 
 import Logo from '../components/Logo'
 
-import '../scss/main.scss'
+import '../styles/main.scss'
 
 export default class InformationLayout extends React.Component {
   render() {

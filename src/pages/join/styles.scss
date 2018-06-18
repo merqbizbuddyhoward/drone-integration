@@ -1,34 +1,37 @@
 .JoinPage {
-  &_heading {
-  }
+    &_heading {
+        padding-bottom: 1.6rem;
+    }
 
-  &__form {
-  }
+    &__form {}
 
-  &__form-field {
-  }
+    &__form-field {}
 
-  &__fieldset {
-  }
+    &__fieldset {}
 
-  &__radio-button {
-  }
+    &__radio-button {}
 
-  &__legend {
-  }
+    &__legend {
+        text-align: center;
+    }
 
-  &__button {
-  }
+    &__button {}
 
-  &__text-input {
-  }
+    &__text-input {}
 
-  &__text-input.is-phone-number {
-  }
+    &__text-input.is-phone-number {}
 
-  &__text-input.is-phone-extension {
-  }
+    &__text-input.is-phone-extension {}
 
-  &__legal {
-  }
+    &__legal {
+        padding: 0 4rem;
+    }
+
+    &__divider {
+        width: 40%;
+        padding: 0 2rem;
+        background-color: #f0f0f0;
+        height: 1px;
+        border: 0;
+    }
 }

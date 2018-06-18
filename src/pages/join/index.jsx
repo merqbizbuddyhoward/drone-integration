@@ -13,55 +13,77 @@ import Link from 'gatsby-link'
 import './styles.scss'
 
 export default () => (
-  <Box className="JoinPage" justify="center" align="center" pad="medium">
+  <Box
+    className="JoinPage"
+    justify="center"
+    align="center"
+    pad="small"
+    size="large"
+  >
     <Heading className="JoinPage_heading" align="center" margin="medium">
       Join Now
     </Heading>
+    <hr className="JoinPage__divider" />
     <Form className="JoinPage__form">
-      <fieldset className="JoinPage__fieldset">
-        <legend className="JoinPage__legend">
-          Do you buy or sell recycled paper?
-        </legend>
-        <RadioButton
-          className="JoinPage__radio-button"
-          id="userTypeBuyer"
-          label="I am a buyer"
+      <Box align="center">
+        <fieldset className="JoinPage__fieldset">
+          <legend className="JoinPage__legend">
+            1. Do you buy or sell recycled paper?
+          </legend>
+          <Box direction="row" justify="center" margin="small">
+            <RadioButton
+              className="JoinPage__radio-button"
+              id="userTypeBuyer"
+              label="I am a buyer"
+            />
+            <RadioButton
+              className="JoinPage__radio-button"
+              id="userTypeSeller"
+              label="I am a seller"
+            />
+          </Box>
+        </fieldset>
+        <hr className="JoinPage__divider" />
+        <fieldset className="JoinPage__fieldset">
+          <legend className="JoinPage__legend">
+            2. Tell us a little bit about yourself
+          </legend>
+          <Box direction="row" justify="between" margin="small">
+            <FormField className="JoinPage__form-field" label="First Name *">
+              <TextInput className="JoinPage__text-input" />
+            </FormField>
+            <div>&nbsp;&nbsp;</div>
+            <FormField className="JoinPage__form-field" label="Last Name *">
+              <TextInput className="JoinPage__text-input" />
+            </FormField>
+          </Box>
+          <Box direction="row" justify="center" margin="small">
+            <FormField className="JoinPage__form-field" label="Company Name *">
+              <TextInput className="JoinPage__text-input" />
+            </FormField>
+          </Box>
+          <Box direction="row" justify="center" margin="small">
+            <FormField className="JoinPage__form-field" label="Email Address *">
+              <TextInput className="JoinPage__text-input" />
+            </FormField>
+          </Box>
+          <Box direction="row" justify="center" margin="small">
+            <FormField className="JoinPage__form-field" label="Phone Number *">
+              <TextInput className="JoinPage__text-input is-phone-number" />
+            </FormField>
+            <div>&nbsp;&nbsp;</div>
+            <FormField className="JoinPage__form-field" label="Ext.">
+              <TextInput className="JoinPage__text-input is-phone-extension" />
+            </FormField>
+          </Box>
+        </fieldset>
+        <Button
+          className="JoinPage__button"
+          label="Submit"
+          primary
+          onClick={() => {}}
         />
-        <RadioButton
-          className="JoinPage__radio-button"
-          id="userTypeSeller"
-          label="I am a seller"
-        />
-      </fieldset>
-      <fieldset className="JoinPage__fieldset">
-        <legend className="JoinPage__legend">
-          Tell us a little bit about yourself
-        </legend>
-        <FormField className="JoinPage__form-field" label="First Name *">
-          <TextInput className="JoinPage__text-input" />
-        </FormField>
-        <FormField className="JoinPage__form-field" label="Last Name *">
-          <TextInput className="JoinPage__text-input" />
-        </FormField>
-        <FormField className="JoinPage__form-field" label="Company Name *">
-          <TextInput className="JoinPage__text-input" />
-        </FormField>
-        <FormField className="JoinPage__form-field" label="Email Address *">
-          <TextInput className="JoinPage__text-input" />
-        </FormField>
-        <FormField className="JoinPage__form-field" label="Phone Number *">
-          <TextInput className="JoinPage__text-input is-phone-number" />
-        </FormField>
-        <FormField className="JoinPage__form-field" label="Ext.">
-          <TextInput className="JoinPage__text-input is-phone-extension" />
-        </FormField>
-      </fieldset>
-      <Button
-        className="JoinPage__button"
-        label="Submit"
-        primary
-        onClick={() => {}}
-      />
+      </Box>
     </Form>
     <Paragraph className="JoinPage__legal">
       By clicking the submit button, you accept merQbiz's{' '}

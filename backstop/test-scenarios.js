@@ -69,5 +69,11 @@ module.exports = [
       'url': path.join(domain, 'user-agreement', 'index.html'),
       'misMatchThreshold' : threshold,
       'requireSameDimensions': true
+    },
+    {
+      'label': 'MerQbiz Privacy Policy Page',
+      'url': path.join(domain, 'privacy-policy', 'index.html'),
+      'misMatchThreshold' : threshold,
+      'requireSameDimensions': true
     }
   ]

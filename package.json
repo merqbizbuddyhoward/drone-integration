@@ -1,5 +1,5 @@
 {
-  "name": "merqbiz-web-ui",
+  "name": "merqbiz-public-pages",
   "description": "Public facing pages for merQbiz",
   "version": "1.0.0",
   "author": "",
@@ -50,6 +50,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/merqbiz/merqbiz-web-ui.git"
+    "url": "git+https://github.com/merqbiz/merqbiz-public-pages.git"
   }
 }
