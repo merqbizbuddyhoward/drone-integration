@@ -7,17 +7,14 @@ pipeline:
     when:
       status: [ success, failure ]
     template: >
-       A build for {{repo.name}} {{build.number}} for {{build.branch}} has started.
+      Continuous Integration started for branch {{build.branch}} committed for {{repo.name}} \#{{build.number}}.
   frontend:
     image: backstopjs/backstopjs
     commands: 
       - npm install
-      - npm run lint
       - npm run dev
       - npm run test
     mem_limit: 2000MB 
-    when:
-      branch: master
   s3-sync:
     image: plugins/s3-sync:1
     region: us-west-2
@@ -31,6 +28,8 @@ pipeline:
       ".css": gzip
     cloudfront_distribution: E1CH3B6EW4M6KZ
     secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      branch: [develop, qa, preview, demo, master]
   notify:
     image: plugins/slack
     username: merqbizbuddyhoward
