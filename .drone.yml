@@ -24,9 +24,8 @@ pipeline:
     commands: 
       - npm install
       - npm run build
-      - npm run test
     mem_limit: 2000MB 
-  s3-sync:
+  cdn-dev:
     image: plugins/s3-sync:1
     region: us-west-2
     bucket: dev.merqbiz.com
@@ -40,7 +39,22 @@ pipeline:
     cloudfront_distribution: E1CH3B6EW4M6KZ
     secrets: [ aws_access_key_id, aws_secret_access_key ]
     when:
-      branch: [develop, qa, preview, demo, master]
+      branch: [develop, master]
+  cdn-qa:
+    image: plugins/s3-sync:1
+    region: us-west-2
+    bucket: qa.merqbiz.com
+    source: public
+    target: /
+    acl:
+      "*": public-read
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
+    cloudfront_distribution: E1CH3B6EW4M6KZ
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      branch: [qa]
   notify:
     image: plugins/slack
     username: merqbizbuddyhoward
