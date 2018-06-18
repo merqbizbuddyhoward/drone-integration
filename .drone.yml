@@ -23,7 +23,7 @@ pipeline:
     image: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
     commands: 
       - npm install
-      - npm run dev
+      - npm run build
       - npm run test
     mem_limit: 2000MB 
   s3-sync:
