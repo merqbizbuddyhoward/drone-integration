@@ -1,0 +1,23 @@
+.InformationLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__header {
+  }
+
+  &__main {
+    flex: 1;
+  }
+
+  &_logo {
+    width: 127px;
+    height: auto;
+  }
+}

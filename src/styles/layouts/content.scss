@@ -1,0 +1,36 @@
+.ContentLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: $brand-color;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  &__main {
+    flex: 1;
+    border-radius: 2px;
+  }
+
+  &__main__content {
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &_logo {
+    display: block;
+    width: 127px;
+    height: auto;
+    margin: 20px auto;
+  }
+}
