@@ -26,4 +26,7 @@ RUN npm install
 COPY . .
 
 RUN chmod +x entry.sh
-ENTRYPOINT ["/var/app/entry.sh"]
+
+CMD ["npm", "run", "dev"]
+
+# ENTRYPOINT ["/var/app/entry.sh"]
