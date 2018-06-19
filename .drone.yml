@@ -17,8 +17,6 @@ pipeline:
       - npm install
       - npm run build
       - npm run test
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
   notify:
     image: plugins/slack
     username: merqbizbuddyhoward
