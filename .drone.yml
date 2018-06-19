@@ -7,54 +7,14 @@ pipeline:
     when:
       status: [ success, failure ]
     template: >
-      Continuous integration started for <a href="{{DRONE_REPO}}">{{DRONE_REPO}}</a>{{build.branch}} committed for {{repo.name}} {{build.number}}.
-  ecr:
-    image: plugins/ecr
-    repo: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
-    registry: 784985187312.dkr.ecr.us-west-2.amazonaws.com
-    region: us-west-2
-    dockerfile: Dockerfile
-    storage_driver: overlay
-    tags:
-      - latest
-      - 1.0.${DRONE_BUILD_NUMBER}-${DRONE_REPO_BRANCH}
-    secrets: [ ecr_access_key, ecr_secret_key ]
-  frontend:
-    image: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
-    commands: 
+      Continuous integration started for ${DRONE_REPO}${DRONE_REPO} {{build.branch}} committed for {{repo.name}} {{build.number}}.
+  test:
+    image: plugins/docker
+    dockerfile: ./Dockerfile
+    commands:
       - npm install
       - npm run build
-    mem_limit: 2000MB 
-  cdn-dev:
-    image: plugins/s3-sync:1
-    region: us-west-2
-    bucket: dev.merqbiz.com
-    source: public
-    target: /
-    acl:
-      "*": public-read
-    content_encoding:
-      ".js": gzip
-      ".css": gzip
-    cloudfront_distribution: E1CH3B6EW4M6KZ
-    secrets: [ aws_access_key_id, aws_secret_access_key ]
-    when:
-      branch: [develop, master]
-  cdn-qa:
-    image: plugins/s3-sync:1
-    region: us-west-2
-    bucket: qa.merqbiz.com
-    source: public
-    target: /
-    acl:
-      "*": public-read
-    content_encoding:
-      ".js": gzip
-      ".css": gzip
-    cloudfront_distribution: E1CH3B6EW4M6KZ
-    secrets: [ aws_access_key_id, aws_secret_access_key ]
-    when:
-      branch: [qa]
+      - npm run test
   notify:
     image: plugins/slack
     username: merqbizbuddyhoward
