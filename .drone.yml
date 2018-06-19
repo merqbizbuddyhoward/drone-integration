@@ -8,7 +8,7 @@ pipeline:
       status: [ success, failure ]
     template: >
       Continuous integration started for ${DRONE_REPO}${DRONE_REPO} {{build.branch}} committed for {{repo.name}} {{build.number}}.
-  test:
+  frontend:
     image: plugins/docker
     dockerfile: ./Dockerfile
     environment:
