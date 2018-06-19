@@ -9,7 +9,7 @@ pipeline:
     template: >
       Continuous integration started for ${DRONE_REPO}${DRONE_REPO} {{build.branch}} committed for {{repo.name}} {{build.number}}.
   frontend:
-    image: plugins/docker
+    image: docker:latest
     dockerfile: ./Dockerfile
     environment:
       - npm_config_unsafe_perm=true
