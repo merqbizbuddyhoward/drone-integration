@@ -11,6 +11,8 @@ pipeline:
   test:
     image: plugins/docker
     dockerfile: ./Dockerfile
+    environment:
+      - npm_config_unsafe_perm=true
     commands:
       - npm install
       - npm run build
