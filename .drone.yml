@@ -6,14 +6,27 @@ pipeline:
       - npm run build
       - backstop approve --config="backstop/backstop-config.js"
       - backstop test --config="backstop/backstop-config.js"
-  testreports:
+  publishtests:
     image: plugins/s3-sync:1
     region: us-west-2
     bucket: dev.merq.biz
-    source: public
-    target: /_tests
+    source: backstop_data
+    target: /tests/${DRONE_BUILD_NUMBER}
     acl:
       "*": public-read
     secrets: [ aws_access_key_id, aws_secret_access_key ]
     when:
       status:  [ failure, success ]
+  notify:
+    image: plugins/slack
+    username: merqbizbuddyhoward
+    channel: sandbox_tran
+    secrets: [ slack_webhook ]
+    when:
+      status: [ success, failure ]
+    template: >
+     {{#success build.status}}
+       A build for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job. https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/index.html
+     {{else}}
+       A build for {{repo.name}} {{build.number}} failed. Fix me please. https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/index.html
+     {{/success}}
