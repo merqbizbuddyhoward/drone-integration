@@ -1,0 +1,14 @@
+FROM backstopjs/backstopjs
+
+# Create app directory
+WORKDIR /var/app
+
+# Install app dependencies
+COPY package*.json ./
+
+RUN npm install
+RUN npm run build
+
+COPY . .
+
+CMD ["npm", "run", "dev"]

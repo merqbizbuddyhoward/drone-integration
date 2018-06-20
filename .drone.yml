@@ -42,6 +42,7 @@ pipeline:
     secrets: [ slack_webhook ]
     when:
       status: [ success, failure ]
+      branch: [develop, qa]
     template: >
      {{#success build.status}}
        A build for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job. 
