@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_MerQbiz_Thank_You_Page_0_document_0_desktop.png",
-        "test": "../bitmaps_test/20180620-061545/backstop_MerQbiz_Thank_You_Page_0_document_0_desktop.png",
+        "test": "../bitmaps_test/20180620-063611/backstop_MerQbiz_Thank_You_Page_0_document_0_desktop.png",
         "selector": "document",
         "fileName": "backstop_MerQbiz_Thank_You_Page_0_document_0_desktop.png",
         "label": "MerQbiz Thank You Page",
@@ -27,7 +27,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_MerQbiz_Update_Password_Page_0_document_0_desktop.png",
-        "test": "../bitmaps_test/20180620-061545/backstop_MerQbiz_Update_Password_Page_0_document_0_desktop.png",
+        "test": "../bitmaps_test/20180620-063611/backstop_MerQbiz_Update_Password_Page_0_document_0_desktop.png",
         "selector": "document",
         "fileName": "backstop_MerQbiz_Update_Password_Page_0_document_0_desktop.png",
         "label": "MerQbiz Update Password Page",

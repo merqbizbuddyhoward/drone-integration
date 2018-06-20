@@ -4,5 +4,16 @@ pipeline:
     commands: 
       - npm install
       - npm run build
-      - npm run approve
-      - npm run test
+      - backstop approve --config="backstop/backstop-config.js"
+      - backstop test --config="backstop/backstop-config.js"
+  testreports:
+    image: plugins/s3-sync:1
+    region: us-west-2
+    bucket: dev.merq.biz
+    source: public
+    target: /_tests
+    acl:
+      "*": public-read
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      status:  [ failure, success ]
