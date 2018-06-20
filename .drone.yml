@@ -41,11 +41,12 @@ pipeline:
     channel: sandbox_tran
     secrets: [ slack_webhook ]
     when:
+      event: [pull_request]
       status: [ success, failure ]
       branch: [develop, qa]
     template: >
      {{#success build.status}}
-       A build for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job. 
+       A build for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job!
        Test report https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{else}}
        A build for {{repo.name}} {{build.number}} failed. Fix me please.
