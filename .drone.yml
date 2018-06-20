@@ -1,32 +1,5 @@
 pipeline:
-  notify:
-    image: plugins/slack
-    username: merqbizbuddyhoward
-    channel: sandbox_tran
-    secrets: [ slack_webhook ]
-    when:
-      status: [ success, failure ]
-    template: >
-      Continuous integration started for ${DRONE_REPO}${DRONE_REPO} {{build.branch}} committed for {{repo.name}} {{build.number}}.
-  frontend:
-    image: docker:latest
-    dockerfile: ./Dockerfile
-    environment:
-      - npm_config_unsafe_perm=true
-    commands:
-      - npm install
-      - npm run build
-      - npm run test
-  notify:
-    image: plugins/slack
-    username: merqbizbuddyhoward
-    channel: sandbox_tran
-    secrets: [ slack_webhook ]
-    when:
-      status: [ success, failure ]
-    template: >
-     {{#success build.status}}
-       A build for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job.
-     {{else}}
-       A build for {{repo.name}} {{build.number}} failed. Fix me please.
-     {{/success}}
+  test:
+    image: backstopjs/backstopjs
+    commands: 
+      - test --config="./backstop/backstop-config.js"
