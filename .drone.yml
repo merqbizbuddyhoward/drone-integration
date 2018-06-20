@@ -2,4 +2,7 @@ pipeline:
   test:
     image: backstopjs/backstopjs
     commands: 
-      - test --config="./backstop/backstop-config.js"
+      - npm install
+      - npm run build
+      - npm run approve
+      - npm run test
