@@ -16,6 +16,19 @@ pipeline:
     secrets: [ aws_access_key_id, aws_secret_access_key ]
     when:
       status: [ failure, success ]
+  ecr:
+    image: plugins/ecr
+    repo: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
+    registry: 784985187312.dkr.ecr.us-west-2.amazonaws.com
+    region: us-west-2
+    dockerfile: Dockerfile
+    storage_driver: overlay
+    tags:
+      - latest
+      - 1.0.${DRONE_BUILD_NUMBER}-${DRONE_REPO_BRANCH}
+    when:
+      branch: [develop, qa, preview, demo, master]
+    secrets: [ ecr_access_key, ecr_secret_key ]
   deploy-dev:
     image: plugins/s3-sync:1
     region: us-west-2

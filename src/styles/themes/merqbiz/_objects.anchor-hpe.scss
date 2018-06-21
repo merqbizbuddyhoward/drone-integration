@@ -13,13 +13,28 @@
 //   }
 // }
 
+@mixin anchor-style {
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: $brand-link-text-decoration;
+    }
+}
+
 .#{$grommet-namespace}anchor--primary,
 .#{$grommet-namespace}anchor--icon-label,
 .#{$grommet-namespace}anchor--primary:visited,
 .#{$grommet-namespace}anchor--icon-label:visited {
-  // @include link-color-check($link-color, $brand-color);
-  color: $brand-color;
+    // @include link-color-check($link-color, $brand-color);
+    color: $brand-color;
 
-  @include background-context-color($brand-color, $brand-color);
-  @include background-context-icon($brand-color, $brand-color);
+    @include background-context-color($brand-color, $brand-color);
+    @include background-context-icon($brand-color, $brand-color);
+}
+
+.grommet a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
+    @include anchor-style;
+}
+
+.#{$grommet-namespace}anchor {
+    @include anchor-style;
 }

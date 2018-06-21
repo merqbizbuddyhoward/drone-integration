@@ -1,8 +1,22 @@
 .Logo {
   display: flex;
-
+  &__primary {
+  }
+  &__secondary {
+    border-left: 1px solid #888;
+    padding-left: 8px;
+    margin-left: 8px;
+  }
+  &__secondary_caption {
+    font-size: 10px;
+    line-height: 1;
+    margin: 0;
+    color: #888;
+  }
   &_merq-image {
     width: 127px;
     height: 25;
+  }
+  &_voith-image {
   }
 }

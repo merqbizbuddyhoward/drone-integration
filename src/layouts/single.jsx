@@ -6,6 +6,8 @@ import Box from 'grommet/components/Box'
 
 import Logo from '../components/Logo'
 
+import Footer from '../patterns/Footer'
+
 import '../styles/main.scss'
 
 export default class SingleLayout extends React.Component {
@@ -13,7 +15,7 @@ export default class SingleLayout extends React.Component {
     const { siteMetadata } = this.props.data.site
 
     return (
-      <App className="SingleLayout" centered>
+      <div className="SingleLayout">
         <Helmet
           title={siteMetadata.title}
           meta={[
@@ -22,19 +24,29 @@ export default class SingleLayout extends React.Component {
           ]}
         />
         <div className="SingleLayout__header">
-          <Logo />
+          <div className="SingleLayout__header__content">
+            <Logo showMerq={true} type="white" showPoweredByVoith="white" />
+          </div>
         </div>
-        <Box
-          className="SingleLayout__main"
-          alignSelf="center"
-          colorIndex="light-1"
-          size="auto"
-          margin="small"
-          align="center"
-        >
-          {this.props.children()}
-        </Box>
-      </App>
+        <div className="SingleLayout__main">
+          <App className="SingleLayout__app">
+            <Box
+              className="SingleLayout__main"
+              alignSelf="center"
+              colorIndex="light-1"
+              margin="small"
+              align="center"
+            >
+              {this.props.children()}
+            </Box>
+          </App>
+        </div>
+        <div className="SingleLayout__footer">
+          <div className="SingleLayout__footer__content">
+            <Footer />
+          </div>
+        </div>
+      </div>
     )
   }
 }

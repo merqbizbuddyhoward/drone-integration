@@ -1,43 +1,39 @@
 .LoginPage {
-  &___heading {
-  }
+    &___heading {}
 
-  &__form {
-  }
+    &__form {
+        @media (min-width: 640px) {
+            min-width: 360px;
+        }
+    }
 
-  &__form-field {
-  }
+    &__form-field {}
 
-  &__fieldset {
-  }
+    &__fieldset {
+        width: 100%;
+    }
 
-  &__radio-button {
-  }
+    &__legend {}
 
-  &__legend {
-  }
+    &__button {
+        line-height: 3rem;
+        margin: 1rem 0 0;
+    }
 
-  &__button {
-  }
+    &__text-input {}
 
-  &__text-input {
-  }
+    &__text-input.is-phone-number {}
 
-  &__text-input.is-phone-number {
-  }
+    &__text-input.is-phone-extension {}
 
-  &__text-input.is-phone-extension {
-  }
+    &__legal {}
 
-  &__legal {
-  }
-
-  &__divider {
-    width: 40%;
-    margin: 1.6rem 0;
-    padding: 0 50px;
-    background-color: #f0f0f0;
-    height: 1px;
-    border: 0;
-  }
+    &__divider {
+        width: 50%;
+        margin: 1.6rem 0;
+        padding: 0 50px;
+        background-color: #f0f0f0;
+        height: 1px;
+        border: 0;
+    }
 }

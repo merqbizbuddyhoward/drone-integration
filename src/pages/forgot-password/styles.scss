@@ -6,6 +6,8 @@
   }
 
   &__form {
+    width: 100% !important;
+    max-width: 360px;
   }
 
   &__form-field {
@@ -24,5 +26,14 @@
   }
 
   &_link {
+  }
+
+  &__divider {
+    width: 50%;
+    padding: 0 2rem;
+    margin: 0;
+    background-color: #f0f0f0;
+    height: 1px;
+    border: 0;
   }
 }

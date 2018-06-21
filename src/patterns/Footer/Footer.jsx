@@ -11,16 +11,16 @@ export default () => (
     <div className="Footer__content">
       <div className="Footer__content__item">
         <Link className="Footer_link" to="/faq">
-            FAQ
+          FAQ
         </Link>
         <Link className="Footer_link" to="/careers">
-            Careers
+          Careers
         </Link>
         <a
           className="Footer_link"
           href="https://www.linkedin.com/company/merqbiz"
         >
-            LinkedIn
+          LinkedIn
         </a>
       </div>
       <div className="Footer__content__item">
@@ -40,5 +40,9 @@ export default () => (
         <button className="Footer_button">Subscribe</button>
       </div>
     </div>
+    <div className="Footer__copyright">
+      <Logo showMerq={false} showVoith={true} voithType="gray" />
+      <p className="Footer__copyright_text">&copy; 2019 merQbiz LLC.</p>
+    </div>
   </footer>
-  )
+)

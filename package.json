@@ -31,7 +31,8 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-helmet": "^5.2.0",
-    "sass-loader": "^4.1.1"
+    "sass-loader": "^4.1.1",
+    "validator": "^10.3.0"
   },
   "devDependencies": {
     "backstopjs": "^3.2.17",

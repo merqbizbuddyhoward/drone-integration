@@ -23,5 +23,23 @@ module.exports = {
         path: `./data/`
       }
     }
-  ]
+  ],
+  developMiddleware: app => {
+    const NEW_USER_SUCCESS_RESPONSE = { success: true }
+    const NEW_USER_CUSTOMER_EXISTS_RESPONSE = {
+      error: 'true',
+      message:
+        'A customer with the same email already exists in an associated website.'
+    }
+    const { npm_config_customer_exists } = process.env
+    if (npm_config_customer_exists) {
+      app.use('/customer/register/create', function(req, res, next) {
+        res.send(NEW_USER_CUSTOMER_EXISTS_RESPONSE)
+      })
+    } else {
+      app.use('/customer/register/create', function(req, res, next) {
+        res.send(NEW_USER_SUCCESS_RESPONSE)
+      })
+    }
+  }
 }

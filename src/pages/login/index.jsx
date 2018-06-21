@@ -10,32 +10,55 @@ import PasswordInput from 'grommet/components/PasswordInput'
 import TextInput from 'grommet/components/TextInput'
 import Link from 'gatsby-link'
 
+import './styles.scss'
+
 export default () => (
-  <Box className="LoginPage" justify="center" align="center" pad="medium">
+  <Box
+    className="LoginPage"
+    justify="center"
+    align="center"
+    pad="small"
+    size="medium"
+  >
     <Heading className="LoginPage__title" align="center" margin="medium">
-      Login Page
+      Login
     </Heading>
-    <Form>
-      <fieldset className="LoginPage__user-type">
-        <legend>Do you buy or sell recycled paper?</legend>
-        <RadioButton id="userTypeBuyer" label="I am a buyer" />
+    <hr className="LoginPage__divider" />
+    <Form className="LoginPage__form">
+      <Box
+        justify="center"
+        responsive="false"
+        direction="row"
+        align="center"
+        margin="small"
+      >
+        <RadioButton id="userTypeBuyer" label="I am a buyer" />&nbsp;
         <RadioButton id="userTypeSeller" label="I am a seller" />
-      </fieldset>
+      </Box>
       <fieldset>
-        <legend>Tell us a little bit about yourself</legend>
-        <FormField label="Email*">
-          <TextInput />
-        </FormField>
-        <FormField label="Password*">
-          <PasswordInput />
-        </FormField>
+        <Box direction="row" justify="center" margin="small">
+          <FormField label="Email*">
+            <TextInput />
+          </FormField>
+        </Box>
+        <Box direction="row" justify="center" margin="small">
+          <FormField label="Password*">
+            <PasswordInput />
+          </FormField>
+        </Box>
+        <Box direction="column" justify="center" margin="small">
+          <Link to="/forgot-password">Forgot your password?</Link>
+          <Button
+            className="LoginPage__button"
+            label="Login"
+            fill
+            primary
+            onClick={() => {}}
+          />
+        </Box>
       </fieldset>
-      <Link to="/forgot-password">Forgot your password?</Link>
-      <div>
-        <Button label="Login" primary onClick={() => {}} />
-      </div>
     </Form>
-    <Paragraph>
+    <Paragraph size="small">
       Don't have an account? <Link to="/join">Join Now</Link>
     </Paragraph>
   </Box>

@@ -25,7 +25,7 @@ export default class IndexLayout extends React.Component {
         />
         <Header>
           <Header.Left>
-            <Logo showVoith />
+            <Logo showMerq={true} type="white" showPoweredByVoith="white" />
           </Header.Left>
           <Header.Right>
             <Nav />

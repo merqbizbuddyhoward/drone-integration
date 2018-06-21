@@ -1,26 +1,56 @@
 .SingleLayout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 24px;
-  box-sizing: border-box;
-  background-color: $brand-color;
+    $SingleLayout__header__content--Width: 1280px;
+    $SingleLayout__main__content--Width: 720px;
+    $SingleLayout__footer__content--Width: 1280px;
 
-  * {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
     box-sizing: border-box;
-  }
+    background-color: $brand-color;
 
-  &__header {
-  }
+    * {
+        box-sizing: border-box;
+    }
 
-  &__main {
-    flex: 0;
-  }
+    &__header {
+        display: flex;
+        justify-content: center;
+        padding: 24px;
+    }
 
-  &_logo {
-    display: block;
-    width: 127px;
-    height: auto;
-    margin: 20px auto;
-  }
+    &__header__content {
+        display: flex;
+        justify-content: center;
+        width: $SingleLayout__header__content--Width;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    &__main {
+        flex: 1;
+        padding: 0px 24px 36px 24px;
+        border-radius: 2px;
+    }
+
+    &_logo {
+        display: block;
+        width: 127px;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    &__footer {
+        padding: 24px;
+        background-color: #fff;
+    }
+
+    &__footer__content {
+        display: flex;
+        flex-direction: column;
+        width: $SingleLayout__footer__content--Width;
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }

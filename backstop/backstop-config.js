@@ -7,6 +7,11 @@ module.exports = {
       "label": "desktop",
       "width": 1920,
       "height": 1080
+    },
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 480
     }
   ],
   "onBeforeScript": "puppet/onBefore.js",

@@ -1,8 +1,11 @@
 .ContentLayout {
+  $ContentLayout__header__content--Width: 1280px;
+  $ContentLayout__main__content--Width: 720px;
+  $ContentLayout__footer__content--Width: 1280px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 24px;
+  padding: 0;
   box-sizing: border-box;
   background-color: $brand-color;
 
@@ -16,13 +19,22 @@
     padding: 24px;
   }
 
+  &__header__content {
+    display: flex;
+    justify-content: center;
+    width: $ContentLayout__header__content--Width;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
   &__main {
     flex: 1;
+    padding: 0px 24px 36px 24px;
     border-radius: 2px;
   }
 
   &__main__content {
-    width: 1280px;
+    width: $ContentLayout__main__content--Width;
     max-width: 100%;
     margin: 0 auto;
   }
@@ -32,5 +44,16 @@
     width: 127px;
     height: auto;
     margin: 20px auto;
+  }
+  &__footer {
+    padding: 24px;
+    background-color: #fff;
+  }
+  &__footer__content {
+    display: flex;
+    flex-direction: column;
+    width: $ContentLayout__footer__content--Width;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }

@@ -7,10 +7,9 @@ import './styles.scss'
 
 export default () => (
   <Box className="FaqPage" justify="center" align="center" pad="medium">
-    <Heading className="FaqPage_title" tag="h2" strong>
-      General Information
+    <Heading className="FaqPage_title" tag="h1" strong>
+      Frequently Asked Questions
     </Heading>
-
     <Heading className="FaqPage__question" tag="h3" margin="small" strong>
       Who can join merQbiz
     </Heading>
