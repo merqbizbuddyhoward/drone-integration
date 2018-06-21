@@ -4,6 +4,6 @@ pipeline:
     environment:
       - NODE_ENV=production
     commands: 
-      - export BRANCH_ENV=$${DRONE_REPO_BRANCH}
+      - export BRANCH_ENV=$${DRONE_COMMIT_BRANCH}
       - echo $NODE_ENV
       - echo $BRANCH_ENV
