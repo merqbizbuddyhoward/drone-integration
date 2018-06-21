@@ -1,9 +1,15 @@
 pipeline:
-  test-run:
+  build:
     image: backstopjs/backstopjs
+    environment:
+      - NODE_ENV=production
     commands: 
       - npm install
       - npm run build
+  test-run:
+    image: backstopjs/backstopjs
+    environment:
+    commands: 
       - backstop test --config="backstop/backstop-config.js"
   test-report:
     image: plugins/s3-sync:1

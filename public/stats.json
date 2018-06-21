@@ -1,68 +1,72 @@
 {
   "assetsByChunkName": {
-    "component---src-pages-dispute-resolution-policy-js": [
-      "component---src-pages-dispute-resolution-policy-js-16d52cba19efd0f235dd.js",
-      "component---src-pages-dispute-resolution-policy-js-16d52cba19efd0f235dd.js.map"
+    "component---src-pages-privacy-policy-index-jsx": [
+      "component---src-pages-privacy-policy-index-jsx-53deb7ae921cc2d60377.js",
+      "component---src-pages-privacy-policy-index-jsx-53deb7ae921cc2d60377.js.map"
     ],
     "path---update-password": [
       "path---update-password-a0e39f21c11f6a62c5ab.js",
       "path---update-password-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "component---src-pages-index-js": [
-      "component---src-pages-index-js-855b80fec3a902dc4140.js",
-      "component---src-pages-index-js-855b80fec3a902dc4140.js.map"
-    ],
     "path---": [
-      "path----b399d76988b174ef99b1.js",
-      "path----b399d76988b174ef99b1.js.map"
+      "path----653d14b9c4800283a620.js",
+      "path----653d14b9c4800283a620.js.map"
     ],
-    "component---src-layouts-information-js": [
-      "component---src-layouts-information-js-f2e9af26b34bf7969d18.js",
-      "component---src-layouts-information-js-f2e9af26b34bf7969d18.js.map"
+    "component---src-layouts-single-jsx": [
+      "component---src-layouts-single-jsx-c02a9d21d4bacfe5cbc1.js",
+      "component---src-layouts-single-jsx-c02a9d21d4bacfe5cbc1.js.map"
+    ],
+    "component---src-pages-forgot-password-index-jsx": [
+      "component---src-pages-forgot-password-index-jsx-2fc742883a387c10158e.js",
+      "component---src-pages-forgot-password-index-jsx-2fc742883a387c10158e.js.map"
+    ],
+    "component---src-pages-user-agreement-index-jsx": [
+      "component---src-pages-user-agreement-index-jsx-de872d73d9914fcd224b.js",
+      "component---src-pages-user-agreement-index-jsx-de872d73d9914fcd224b.js.map"
+    ],
+    "component---src-layouts-index-jsx": [
+      "component---src-layouts-index-jsx-13d20366eec81d9f9bd2.js",
+      "component---src-layouts-index-jsx-13d20366eec81d9f9bd2.js.map"
     ],
     "path---join": [
       "path---join-a0e39f21c11f6a62c5ab.js",
       "path---join-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---faq": [
-      "path---faq-6afd5d1bad58bb1d48b7.js",
-      "path---faq-6afd5d1bad58bb1d48b7.js.map"
+      "path---faq-a0e39f21c11f6a62c5ab.js",
+      "path---faq-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "component---src-pages-faq-js": [
-      "component---src-pages-faq-js-0f82dddede9dc0e70a6f.js",
-      "component---src-pages-faq-js-0f82dddede9dc0e70a6f.js.map"
+    "component---src-pages-update-password-index-jsx": [
+      "component---src-pages-update-password-index-jsx-9177aafea11ccb7001c7.js",
+      "component---src-pages-update-password-index-jsx-9177aafea11ccb7001c7.js.map"
     ],
-    "component---src-layouts-single-js": [
-      "component---src-layouts-single-js-e12f23ce5a7cc7e8eb99.js",
-      "component---src-layouts-single-js-e12f23ce5a7cc7e8eb99.js.map"
-    ],
-    "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-244a098bfa109b147be5.js",
-      "component---src-layouts-index-js-244a098bfa109b147be5.js.map"
+    "component---src-pages-about-index-jsx": [
+      "component---src-pages-about-index-jsx-2022b1d3287e9fe25008.js",
+      "component---src-pages-about-index-jsx-2022b1d3287e9fe25008.js.map"
     ],
     "path---index": [
       "path---index-a0e39f21c11f6a62c5ab.js",
       "path---index-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "component---src-pages-404-js": [
-      "component---src-pages-404-js-893fab33ed0a9c4455ac.js",
-      "component---src-pages-404-js-893fab33ed0a9c4455ac.js.map"
+    "component---src-pages-thank-you-index-jsx": [
+      "component---src-pages-thank-you-index-jsx-2a8f256c622b1822d7f9.js",
+      "component---src-pages-thank-you-index-jsx-2a8f256c622b1822d7f9.js.map"
     ],
-    "component---src-pages-user-agreement-js": [
-      "component---src-pages-user-agreement-js-bed2bd8ab4a3f699bfa2.js",
-      "component---src-pages-user-agreement-js-bed2bd8ab4a3f699bfa2.js.map"
+    "component---src-pages-faq-index-jsx": [
+      "component---src-pages-faq-index-jsx-b7cd0c0ecd6d48b5c359.js",
+      "component---src-pages-faq-index-jsx-b7cd0c0ecd6d48b5c359.js.map"
+    ],
+    "component---src-layouts-content-jsx": [
+      "component---src-layouts-content-jsx-792af539dad2efef7578.js",
+      "component---src-layouts-content-jsx-792af539dad2efef7578.js.map"
     ],
     "commons": [
-      "commons-ac0ef35776dfcff250d9.js",
-      "commons-ac0ef35776dfcff250d9.js.map"
+      "commons-bf83ada5fff07d094e0a.js",
+      "commons-bf83ada5fff07d094e0a.js.map"
     ],
-    "component---src-pages-join-js": [
-      "component---src-pages-join-js-5fbcbe62ceb34e415095.js",
-      "component---src-pages-join-js-5fbcbe62ceb34e415095.js.map"
-    ],
-    "component---src-pages-update-password-js": [
-      "component---src-pages-update-password-js-e7e0f8833e2b12a8c1b7.js",
-      "component---src-pages-update-password-js-e7e0f8833e2b12a8c1b7.js.map"
+    "component---src-pages-join-index-jsx": [
+      "component---src-pages-join-index-jsx-492e1f77145bc230ac6e.js",
+      "component---src-pages-join-index-jsx-492e1f77145bc230ac6e.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
@@ -72,17 +76,25 @@
       "path---user-agreement-a0e39f21c11f6a62c5ab.js",
       "path---user-agreement-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "component---src-pages-forgot-password-js": [
-      "component---src-pages-forgot-password-js-4b2e420c0ac0fd506de0.js",
-      "component---src-pages-forgot-password-js-4b2e420c0ac0fd506de0.js.map"
+    "component---src-pages-404-jsx": [
+      "component---src-pages-404-jsx-893fab33ed0a9c4455ac.js",
+      "component---src-pages-404-jsx-893fab33ed0a9c4455ac.js.map"
     ],
     "path---login": [
       "path---login-a0e39f21c11f6a62c5ab.js",
       "path---login-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "component---src-pages-thank-you-js": [
-      "component---src-pages-thank-you-js-2b938cefdad100c8d989.js",
-      "component---src-pages-thank-you-js-2b938cefdad100c8d989.js.map"
+    "component---src-pages-index-jsx": [
+      "component---src-pages-index-jsx-c26fdfb567ce7b591682.js",
+      "component---src-pages-index-jsx-c26fdfb567ce7b591682.js.map"
+    ],
+    "component---src-pages-login-index-jsx": [
+      "component---src-pages-login-index-jsx-c2331563488e9ebbe78c.js",
+      "component---src-pages-login-index-jsx-c2331563488e9ebbe78c.js.map"
+    ],
+    "component---src-pages-dispute-resolution-policy-index-jsx": [
+      "component---src-pages-dispute-resolution-policy-index-jsx-56f16a42688061d8b126.js",
+      "component---src-pages-dispute-resolution-policy-index-jsx-56f16a42688061d8b126.js.map"
     ],
     "path---thank-you": [
       "path---thank-you-a0e39f21c11f6a62c5ab.js",
@@ -92,13 +104,13 @@
       "path---forgot-password-a0e39f21c11f6a62c5ab.js",
       "path---forgot-password-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "component---src-pages-login-js": [
-      "component---src-pages-login-js-b6ba5fbd483dfdb29b1f.js",
-      "component---src-pages-login-js-b6ba5fbd483dfdb29b1f.js.map"
-    ],
     "app": [
-      "app-5cf82322da58e9534db8.js",
-      "app-5cf82322da58e9534db8.js.map"
+      "app-be682601af30b93e2cf9.js",
+      "app-be682601af30b93e2cf9.js.map"
+    ],
+    "path---privacy-policy": [
+      "path---privacy-policy-a0e39f21c11f6a62c5ab.js",
+      "path---privacy-policy-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---dispute-resolution-policy": [
       "path---dispute-resolution-policy-a0e39f21c11f6a62c5ab.js",
@@ -107,10 +119,6 @@
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
       "path---404-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "component---src-pages-about-js": [
-      "component---src-pages-about-js-33e62cb584376372b336.js",
-      "component---src-pages-about-js-33e62cb584376372b336.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
