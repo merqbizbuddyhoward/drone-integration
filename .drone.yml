@@ -43,6 +43,6 @@ pipeline:
        Deployment for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job!
        Test report https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{else}}
-       Deployment for {{repo.name}} {{build.number}} failed. Fix me please.
+       Deployment for {{repo.name}} {{build.number}} failed. Fix me please!
        Test report https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{/success}}
