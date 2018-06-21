@@ -16,7 +16,7 @@ pipeline:
     secrets: [ aws_access_key_id, aws_secret_access_key ]
     when:
       status: [ failure, success ]
-  ecr:
+  publish-image:
     image: plugins/ecr
     repo: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
     registry: 784985187312.dkr.ecr.us-west-2.amazonaws.com
@@ -54,8 +54,8 @@ pipeline:
     template: >
      {{#success build.status}}
        Deployment for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job!
-       Test report https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
+       Test report https://dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{else}}
        Deployment for {{repo.name}} {{build.number}} failed. Please fix me!
-       Test report https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
+       Test report https://dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{/success}}
