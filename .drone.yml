@@ -3,4 +3,112 @@ pipeline:
     image: node:8.11.2-alpine
     commands: 
       - export BRANCH_ENV=$${DRONE_COMMIT_BRANCH}
+      - npm install
       - /bin/sh build.sh
+  test-run:
+    image: backstopjs/backstopjs
+    environment:
+    commands: 
+      - backstop test --config="backstop/backstop-config.js"
+  test-report:
+    image: plugins/s3-sync:1
+    region: us-west-2
+    bucket: dev.merq.biz
+    source: backstop_data
+    target: /tests/${DRONE_BUILD_NUMBER}
+    acl:
+      "*": public-read
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      status: [ failure, success ]
+  publish-image:
+    image: plugins/ecr
+    repo: 784985187312.dkr.ecr.us-west-2.amazonaws.com/merqbiz-public-pages
+    registry: 784985187312.dkr.ecr.us-west-2.amazonaws.com
+    region: us-west-2
+    dockerfile: Dockerfile
+    storage_driver: overlay
+    tags:
+      - latest
+      - 1.0.${DRONE_BUILD_NUMBER}-${DRONE_REPO_BRANCH}
+    when:
+      branch: [develop, qa, preview, demo, master]
+    secrets: [ ecr_access_key, ecr_secret_key ]
+  deploy-dev:
+    image: plugins/s3-sync:1
+    region: us-west-2
+    bucket: dev.merqbiz.com
+    source: public
+    target: /
+    acl:
+      "*": public-read
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
+    cloudfront_distribution: E1CH3B6EW4M6KZ
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      branch: [develop]
+      status: [ success, failure ]
+  deploy-qa:
+    image: plugins/s3-sync:1
+    region: us-west-2
+    bucket: qa.merqbiz.com
+    source: public
+    target: /
+    acl:
+      "*": public-read
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
+    cloudfront_distribution: E1CH3B6EW4M6KZ
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      branch: [qa]
+      status: [ success, failure ]
+  deploy-preview:
+    image: plugins/s3-sync:1
+    region: us-west-2
+    bucket: preview.merqbiz.com
+    source: public
+    target: /
+    acl:
+      "*": public-read
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
+    cloudfront_distribution: E1CH3B6EW4M6KZ
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      branch: [preview]
+      status: [ success, failure ]
+  deploy-demo:
+    image: plugins/s3-sync:1
+    region: us-west-2
+    bucket: demo2.merqbiz.com
+    source: public
+    target: /
+    acl:
+      "*": public-read
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
+    cloudfront_distribution: E1CH3B6EW4M6KZ
+    secrets: [ aws_access_key_id, aws_secret_access_key ]
+    when:
+      branch: [demo]
+      status: [ success, failure ]
+  deploy-notify:
+    image: plugins/slack
+    secrets: [ slack_webhook ]
+    when:
+      status: [ success, failure ]
+      branch: [develop, qa]
+    template: >
+     {{#success build.status}}
+       Deployment for {{repo.name}} #{{build.number}} for {{build.branch}} succeeded. Good job!
+       Test report https://dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
+     {{else}}
+       Deployment for {{repo.name}} #{{build.number}} failed. Please fix me!
+       Test report https://dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
+     {{/success}}
