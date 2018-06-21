@@ -1,9 +1,6 @@
 pipeline:
   build:
-    image: backstopjs/backstopjs
-    environment:
-      - NODE_ENV=production
+    image: node:8.11.2-alpine
     commands: 
       - export BRANCH_ENV=$${DRONE_COMMIT_BRANCH}
-      - echo $NODE_ENV
-      - echo $BRANCH_ENV
+      - /bin/sh build.sh
