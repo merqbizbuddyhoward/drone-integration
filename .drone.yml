@@ -5,6 +5,7 @@ pipeline:
       - NODE_ENV=production
     commands: 
       - npm install
+      - echo $NODE_ENV
       - npm run build
   test-run:
     image: backstopjs/backstopjs
