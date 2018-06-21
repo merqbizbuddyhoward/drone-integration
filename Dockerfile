@@ -7,10 +7,11 @@ WORKDIR /var/app
 COPY package*.json ./
 
 RUN npm install
-RUN npm run build
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8000
 
-CMD [ "npm", "start" ]
+RUN chmod +x entry.sh
+
+ ENTRYPOINT ["/var/app/entry.sh"]
