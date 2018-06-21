@@ -101,9 +101,9 @@ pipeline:
       branch: [develop, qa]
     template: >
      {{#success build.status}}
-       Deployment for {{repo.name}} \#{{build.number}} for {{build.branch}} succeeded. Good job!
+       Deployment for {{repo.name}} #{{build.number}} for {{build.branch}} succeeded. Good job!
        Test report https://dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{else}}
-       Deployment for {{repo.name}} \#{{build.number}} failed. Please fix me!
+       Deployment for {{repo.name}} #{{build.number}} failed. Please fix me!
        Test report https://dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{/success}}
