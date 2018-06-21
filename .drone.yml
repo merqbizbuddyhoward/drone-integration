@@ -1,14 +1,11 @@
 pipeline:
-  test:
+  test-run:
     image: backstopjs/backstopjs
     commands: 
       - npm install
       - npm run build
-      - backstop approve --config="backstop/backstop-config.js"
       - backstop test --config="backstop/backstop-config.js"
-    when:
-      event: [pull_request]
-  publishtests:
+  test-report:
     image: plugins/s3-sync:1
     region: us-west-2
     bucket: dev.merq.biz
@@ -18,12 +15,11 @@ pipeline:
       "*": public-read
     secrets: [ aws_access_key_id, aws_secret_access_key ]
     when:
-      event: [pull_request]
-      status:  [ failure, success ]
+      status: [ failure, success ]
   deploy-dev:
     image: plugins/s3-sync:1
     region: us-west-2
-    bucket: dev.merqbiz.com
+    bucket: dev2.merqbiz.com
     source: public
     target: /
     acl:
@@ -35,19 +31,17 @@ pipeline:
     secrets: [ aws_access_key_id, aws_secret_access_key ]
     when:
       branch: [develop]
-  notify:
+  deploy-notify:
     image: plugins/slack
-    username: merqbizbuddyhoward
-    channel: sandbox_tran
     secrets: [ slack_webhook ]
     when:
       status: [ success, failure ]
       branch: [develop, qa]
     template: >
      {{#success build.status}}
-       A build for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job. 
+       Deployment for {{repo.name}} {{build.number}} for {{build.branch}} succeeded. Good job!
        Test report https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{else}}
-       A build for {{repo.name}} {{build.number}} failed. Fix me please.
+       Deployment for {{repo.name}} {{build.number}} failed. Fix me please.
        Test report https://s3-us-west-2.amazonaws.com/dev.merq.biz/tests/${DRONE_BUILD_NUMBER}/html_report/index.html
      {{/success}}
