@@ -3,8 +3,7 @@ pipeline:
     image: backstopjs/backstopjs
     environment:
       - NODE_ENV=production
-      - BRANCH_ENV=${DRONE_REPO_BRANCH}
     commands: 
-      - npm install
+      - export BRANCH_ENV=$${DRONE_REPO_BRANCH}
       - echo $NODE_ENV
       - echo $BRANCH_ENV
