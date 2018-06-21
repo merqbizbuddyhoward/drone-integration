@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
-import merqbizWhiteLogo from './img/merqbiz-white-logo.png'
-import merqbizColorLogo from './img/merqbiz-color-logo.png'
+import merqbizWhiteLogo from './img/merQbiz-white-logo.png'
+import merqbizColorLogo from './img/merQbiz-color-logo.png'
 import voithWhiteLogo from './img/voith-logotype-white.png'
 import voithGrayLogo from './img/voith-logotype-gray.png'
 
