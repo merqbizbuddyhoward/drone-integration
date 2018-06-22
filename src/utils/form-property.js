@@ -1,6 +1,5 @@
-/**
- *
- */
+import isEmail from 'validator/lib/isEmail'
+
 const PRESET_RULES = {
   'is-required': {
     message: 'This is a required field',
@@ -8,10 +7,15 @@ const PRESET_RULES = {
       const userInput = val.trim()
       return userInput.length >= 1
     }
+  },
+  'is-email': {
+    message: 'Invalid email given',
+    validator: val => isEmail(val)
   }
 }
 export default class FormProperty {
-  constructor({ name, value = '', rules = [] }) {
+  constructor({ context, name, value = '', rules = [] }) {
+    this.context = context
     this.name = name
     this._value = value
     this.errors = []
@@ -27,6 +31,9 @@ export default class FormProperty {
   get firstError() {
     return this.errors[0] || null
   }
+  _updateState() {
+    this.context.setState({ ...this.context.state })
+  }
   validate() {
     this.errors = []
     this.rules.forEach(rule => {
@@ -41,6 +48,7 @@ export default class FormProperty {
         this.errors.push(message)
       }
     })
+    this._updateState()
   }
 }
 

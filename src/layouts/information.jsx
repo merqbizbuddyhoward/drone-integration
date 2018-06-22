@@ -22,7 +22,7 @@ export default class InformationLayout extends React.Component {
           ]}
         />
         <div className="InformationLayout__header">
-          <Logo />
+          <Logo showMerq merqHasLink />
         </div>
         <Box className="InformationLayout__main">{this.props.children()}</Box>
       </App>

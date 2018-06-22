@@ -15,14 +15,17 @@
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:styles": "stylelint 'src/**/*.scss'",
     "serve": "gatsby serve",
-    "test": "backstop test --config=\"backstop/backstop-config.js\""
+    "test": "backstop test --config=\"backstop/backstop-config.js\"",
+    "jest": "jest"
   },
   "dependencies": {
     "autoprefixer": "^7.1.2",
+    "dotenv": "^6.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "gatsby": "^1.1.0",
     "gatsby-link": "^1.3.2",
     "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-sentry": "0.0.4",
     "gatsby-source-filesystem": "^1.5.38",
     "gatsby-transformer-json": "^1.0.19",
     "grommet": "^1.5.0",
@@ -42,10 +45,17 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "jest": "^23.1.0",
     "prettier": "^1.10.2",
     "stylefmt": "^6.0.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.0.0"
+  },
+  "jest": {
+    "testRegex": "(\\.(test|spec))\\.(jsx|js)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "keywords": [],
   "license": "MIT",

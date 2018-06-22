@@ -7,7 +7,7 @@ import './styles.scss'
 
 export default () => (
   <footer className="Footer">
-    <Logo type="color" />
+    <Logo showMerq merqType="color" />
     <div className="Footer__content">
       <div className="Footer__content__item">
         <Link className="Footer_link" to="/faq">
@@ -41,7 +41,7 @@ export default () => (
       </div>
     </div>
     <div className="Footer__copyright">
-      <Logo showMerq={false} showVoith={true} voithType="gray" />
+      <Logo showVoith voithType="gray" />
       <p className="Footer__copyright_text">&copy; 2019 merQbiz LLC.</p>
     </div>
   </footer>

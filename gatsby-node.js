@@ -16,7 +16,7 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
 exports.onCreatePage = async ({ page, boundActionCreators }) => {
   const { createPage } = boundActionCreators
   const USER_PAGE_REGEX = /^\/(login|join|forgot-password|thank-you|update-password)/
-  const CONTENT_PAGE_REGEX = /^\/(faq|user-agreement|dispute-resolution-policy|privacy-policy|about)/
+  const CONTENT_PAGE_REGEX = /^\/(faq|user-agreement|dispute-resolution-policy|privacy-policy|about|404)/
   return new Promise(resolve => {
     if (page.path.match(USER_PAGE_REGEX)) {
       page.layout = 'single'

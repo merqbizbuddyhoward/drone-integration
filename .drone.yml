@@ -3,7 +3,6 @@ pipeline:
     image: node:8.11.2-alpine
     commands: 
       - export BRANCH_ENV=$${DRONE_COMMIT_BRANCH}
-      - npm install
       - /bin/sh build.sh
   test-run:
     image: backstopjs/backstopjs
@@ -29,7 +28,7 @@ pipeline:
     dockerfile: Dockerfile
     storage_driver: overlay
     tags:
-      - 1.0.${DRONE_BUILD_NUMBER}-${DRONE_COMMIT_BRANCH}
+      - 1.0.${DRONE_BUILD_NUMBER}
     when:
       branch: [develop, qa, preview, demo, master]
     secrets: [ ecr_access_key, ecr_secret_key ]

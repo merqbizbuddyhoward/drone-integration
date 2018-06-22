@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Link, { navigateTo } from 'gatsby-link'
-import isEmail from 'validator/lib/isEmail'
 
 import Button from 'grommet/components/Button'
 import Box from 'grommet/components/Box'
@@ -23,37 +22,37 @@ export default class extends Component {
     super(props)
     this.state = {
       accountType: new FormProperty({
+        context: this,
         name: 'account_type',
         value: 'buyer',
         rules: ['is-required']
       }),
       firstName: new FormProperty({
+        context: this,
         name: 'firstname',
         rules: ['is-required']
       }),
       lastName: new FormProperty({
+        context: this,
         name: 'lastname',
         rules: ['is-required']
       }),
       companyName: new FormProperty({
+        context: this,
         name: 'company_name',
         rules: ['is-required']
       }),
       companyEmail: new FormProperty({
+        context: this,
         name: 'company_email',
-        rules: [
-          'is-required',
-          {
-            message: 'Invalid email given',
-            validator: val => isEmail(val)
-          }
-        ]
+        rules: ['is-required', 'is-email']
       }),
       phone: new FormProperty({
+        context: this,
         name: 'phone',
         rules: ['is-required']
       }),
-      ext: new FormProperty({ name: 'ext' })
+      ext: new FormProperty({ context: this, name: 'ext' })
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -71,7 +70,7 @@ export default class extends Component {
     navigateTo('/thank-you')
   }
   _requestUserAccess() {
-    fetch('/customer/register/create', {
+    fetch(process.env.REQUEST_ACCESS_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: new Headers({
@@ -97,19 +96,14 @@ export default class extends Component {
     const { name } = target
     const isToggledInput = ['checkbox', 'radio'].includes(target.type)
     const value = isToggledInput ? target.checked : target.value
-    const formProperty = this.state[name]
-    formProperty.value = value
-    this.setState({
-      [name]: formProperty
-    })
+
+    this.state[name].value = value // is calling setState internally
   }
   handleSubmit(e) {
     e.preventDefault()
 
     if (validateProperties(this.state)) {
       this._requestUserAccess()
-    } else {
-      this.setState(this.state)
     }
   }
   render() {

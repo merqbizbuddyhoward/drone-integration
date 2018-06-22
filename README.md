@@ -1,4 +1,7 @@
 # MerQbiz Public Pages
+
+![alt text](http://drone.merqbiz.com/api/badges/merqbiz/merqbiz-public-pages/status.svg "Build Status")
+
 [BackstopJS Reports](https://github.com/cliffpyles/merqbiz-grommet/tree/develop/backstop_data/html_report/index.html "BackstopJS Report")
 
 ## Setup

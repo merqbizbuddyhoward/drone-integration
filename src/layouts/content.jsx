@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import App from 'grommet/components/App'
 import Box from 'grommet/components/Box'
 
 import Logo from '../components/Logo'
@@ -25,7 +24,7 @@ export default class ContentLayout extends React.Component {
         />
         <div className="ContentLayout__header">
           <div className="ContentLayout__header__content">
-            <Logo showMerq={true} type="white" showPoweredByVoith="white" />
+            <Logo showMerq merqHasLink showPoweredByVoith />
           </div>
         </div>
         <div className="ContentLayout__main">

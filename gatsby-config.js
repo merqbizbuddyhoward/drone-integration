@@ -1,5 +1,9 @@
 const autoprefixer = require('autoprefixer')
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: 'merQbiz - The Online Marketplace for Recovered Paper',
@@ -18,6 +22,14 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://b95939ce7fee4c9eb268448fb549e99e@sentry.io/1230315',
+        // Raven.js version, this is optional.
+        version: '3.26.2'
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `./data/`
@@ -25,21 +37,37 @@ module.exports = {
     }
   ],
   developMiddleware: app => {
-    const NEW_USER_SUCCESS_RESPONSE = { success: true }
-    const NEW_USER_CUSTOMER_EXISTS_RESPONSE = {
+    const USER_JOIN_SUCCESS = { success: true }
+    const USER_JOIN_EMAIL_EXISTS_FAILURE = {
       error: 'true',
       message:
         'A customer with the same email already exists in an associated website.'
     }
-    const { npm_config_customer_exists } = process.env
-    if (npm_config_customer_exists) {
-      app.use('/customer/register/create', function(req, res, next) {
-        res.send(NEW_USER_CUSTOMER_EXISTS_RESPONSE)
+    const SELLER_LOGIN_SUCCESS = {
+      location:
+        'placeholder representing the seller app url to be redirected to'
+    }
+    const BUYER_LOGIN_SUCCESS = {
+      location: 'placeholder representing the buyer app url to be redirected to'
+    }
+
+    const { npm_config_user_join_email_exists } = process.env
+    if (npm_config_user_join_email_exists) {
+      app.use(process.env.REQUEST_ACCESS_URL, function(req, res, next) {
+        res.send(USER_JOIN_EMAIL_EXISTS_FAILURE)
       })
     } else {
-      app.use('/customer/register/create', function(req, res, next) {
-        res.send(NEW_USER_SUCCESS_RESPONSE)
+      app.use(process.env.REQUEST_ACCESS_URL, function(req, res, next) {
+        res.send(USER_JOIN_SUCCESS)
       })
     }
+
+    app.use(process.env.SELLER_LOGIN_URL, function(req, res, next) {
+      res.send(SELLER_LOGIN_SUCCESS)
+    })
+
+    app.use(process.env.BUYER_LOGIN_URL, function(req, res, next) {
+      res.send(BUYER_LOGIN_SUCCESS)
+    })
   }
 }

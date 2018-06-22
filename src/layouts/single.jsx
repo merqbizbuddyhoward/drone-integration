@@ -25,7 +25,7 @@ export default class SingleLayout extends React.Component {
         />
         <div className="SingleLayout__header">
           <div className="SingleLayout__header__content">
-            <Logo showMerq={true} type="white" showPoweredByVoith="white" />
+            <Logo showMerq merqHasLink />
           </div>
         </div>
         <div className="SingleLayout__main">
