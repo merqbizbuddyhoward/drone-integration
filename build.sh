@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-
+echo "Branch" $BRANCH_ENV
 if [ "$BRANCH_ENV" = "develop" ]
 then
     NODE_ENV="development"
