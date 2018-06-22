@@ -22,3 +22,4 @@ fi
 echo "Building for environment" $NODE_ENV
 
 npm run build
+

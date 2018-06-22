@@ -6,12 +6,12 @@ WORKDIR /var/app
 # Install app dependencies
 COPY package*.json ./
 
-# RUN npm install
+RUN npm install
 
 COPY . .
 
 EXPOSE 8000
 
-RUN chmod +x entry.sh
+RUN chmod +x build.sh
 
-ENTRYPOINT ["/var/app/entry.sh"]
+ENTRYPOINT ["/var/app/build.sh"]
