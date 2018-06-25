@@ -20,7 +20,5 @@ else
     NODE_ENV="develop"
 fi
 echo "Building for environment" $NODE_ENV
-
-npm install
 npm run build
 

@@ -3,6 +3,7 @@ pipeline:
     image: node:8.11.2-alpine
     commands: 
       - export BRANCH_ENV=$${DRONE_COMMIT_BRANCH}
+      - npm install
       - /bin/sh build.sh
   test-run:
     image: backstopjs/backstopjs
